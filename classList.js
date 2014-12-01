@@ -8,6 +8,9 @@ var prototype = Array.prototype,
     join = prototype.join;
 
 function DOMTokenList(el) {
+  // If it's not a HTMLElement, exit.
+  if (typeof el.className != 'string') return;
+
   this.el = el;
   // The className needs to be trimmed and split on whitespace
   // to retrieve a list of classes.
